@@ -15,10 +15,11 @@ function resolveImageUrl(src) {
   let imgUrl = src.trim();
   // account for srcset with a descriptor (e.g., "image.jpg 2x")
   imgUrl = imgUrl.split(/\s+/)[0];
-  if (!checkImageFormat(imgUrl)) {
+  const cleanUrl = imgUrl.replace(/[?#].*$/, "");
+  if (!checkImageFormat(cleanUrl)) {
     return null;
   }
-  return imgUrl;
+  return imgUrl.replace(/#.*$/, "");
 }
 
 function resolveLinkHref(href) {

@@ -3,7 +3,7 @@ import { isValidDirectoryPath } from "./isValidPath.js";
 const AVAILABLE_OPTIONS = new Set(["-r", "-l", "-p"]);
 
 export function parseArgs(args) {
-  const urlArg = args.at(-1).trim();
+  const urlArg = args.at(-1)?.toString().trim();
   if (!urlArg) {
     console.error("No URL provided.");
     process.exit(1);
