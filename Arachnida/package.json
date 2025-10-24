@@ -11,6 +11,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "exiftool-vendored": "^31.1.0",
     "htmlparser2": "^10.0.0"
   }
 }
